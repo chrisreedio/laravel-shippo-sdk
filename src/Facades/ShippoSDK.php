@@ -11,6 +11,7 @@ class ShippoSDK extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \ChrisReedIO\ShippoSDK\ShippoSDK::class;
+        // return \ChrisReedIO\ShippoSDK\ShippoSDK::class;
+        return \ChrisReedIO\ShippoSDK\Shippo::class;
     }
 }
