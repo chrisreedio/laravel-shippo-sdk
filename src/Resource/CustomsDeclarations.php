@@ -6,7 +6,7 @@ use ChrisReedIO\ShippoSDK\Requests\CustomsDeclarations\CreateCustomsDeclaration;
 use ChrisReedIO\ShippoSDK\Requests\CustomsDeclarations\GetCustomsDeclaration;
 use ChrisReedIO\ShippoSDK\Requests\CustomsDeclarations\ListCustomsDeclarations;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class CustomsDeclarations extends Resource
 {

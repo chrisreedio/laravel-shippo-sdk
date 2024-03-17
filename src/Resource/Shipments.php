@@ -6,7 +6,7 @@ use ChrisReedIO\ShippoSDK\Requests\Shipments\CreateShipment;
 use ChrisReedIO\ShippoSDK\Requests\Shipments\GetShipment;
 use ChrisReedIO\ShippoSDK\Requests\Shipments\ListShipments;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class Shipments extends Resource
 {

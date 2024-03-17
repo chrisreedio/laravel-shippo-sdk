@@ -7,7 +7,7 @@ use ChrisReedIO\ShippoSDK\Requests\Addresses\GetAddress;
 use ChrisReedIO\ShippoSDK\Requests\Addresses\ListAddresses;
 use ChrisReedIO\ShippoSDK\Requests\Addresses\ValidateAddress;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class Addresses extends Resource
 {

@@ -8,7 +8,7 @@ use ChrisReedIO\ShippoSDK\Requests\UserParcelTemplates\GetUserParcelTemplate;
 use ChrisReedIO\ShippoSDK\Requests\UserParcelTemplates\ListUserParcelTemplates;
 use ChrisReedIO\ShippoSDK\Requests\UserParcelTemplates\UpdateUserParcelTemplate;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class UserParcelTemplates extends Resource
 {

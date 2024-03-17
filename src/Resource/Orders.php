@@ -6,7 +6,7 @@ use ChrisReedIO\ShippoSDK\Requests\Orders\CreateOrder;
 use ChrisReedIO\ShippoSDK\Requests\Orders\GetOrder;
 use ChrisReedIO\ShippoSDK\Requests\Orders\ListOrders;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class Orders extends Resource
 {

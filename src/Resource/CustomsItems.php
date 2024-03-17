@@ -6,7 +6,7 @@ use ChrisReedIO\ShippoSDK\Requests\CustomsItems\CreateCustomsItem;
 use ChrisReedIO\ShippoSDK\Requests\CustomsItems\GetCustomsItem;
 use ChrisReedIO\ShippoSDK\Requests\CustomsItems\ListCustomsItems;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class CustomsItems extends Resource
 {

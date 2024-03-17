@@ -6,7 +6,7 @@ use ChrisReedIO\ShippoSDK\Requests\Invoices\GetInvoice;
 use ChrisReedIO\ShippoSDK\Requests\Invoices\ListInvoiceItemsTemplate;
 use ChrisReedIO\ShippoSDK\Requests\Invoices\ListInvoices;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class Invoices extends Resource
 {

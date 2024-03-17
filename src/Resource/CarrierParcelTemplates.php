@@ -5,7 +5,7 @@ namespace ChrisReedIO\ShippoSDK\Resource;
 use ChrisReedIO\ShippoSDK\Requests\CarrierParcelTemplates\GetCarrierParcelTemplate;
 use ChrisReedIO\ShippoSDK\Requests\CarrierParcelTemplates\ListCarrierParcelTemplates;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class CarrierParcelTemplates extends Resource
 {

@@ -8,7 +8,7 @@ use ChrisReedIO\ShippoSDK\Requests\Batches\GetBatch;
 use ChrisReedIO\ShippoSDK\Requests\Batches\PurchaseBatch;
 use ChrisReedIO\ShippoSDK\Requests\Batches\RemoveShipmentsFromBatch;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class Batches extends Resource
 {

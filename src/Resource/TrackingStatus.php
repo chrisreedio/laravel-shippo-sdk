@@ -5,7 +5,7 @@ namespace ChrisReedIO\ShippoSDK\Resource;
 use ChrisReedIO\ShippoSDK\Requests\TrackingStatus\CreateTrack;
 use ChrisReedIO\ShippoSDK\Requests\TrackingStatus\GetTrack;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class TrackingStatus extends Resource
 {

@@ -7,7 +7,7 @@ use ChrisReedIO\ShippoSDK\Requests\ShippoAccounts\GetShippoAccount;
 use ChrisReedIO\ShippoSDK\Requests\ShippoAccounts\ListShippoAccounts;
 use ChrisReedIO\ShippoSDK\Requests\ShippoAccounts\UpdateShippoAccount;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class ShippoAccounts extends Resource
 {

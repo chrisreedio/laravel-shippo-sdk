@@ -7,7 +7,7 @@ use ChrisReedIO\ShippoSDK\Requests\ServiceGroups\DeleteServiceGroup;
 use ChrisReedIO\ShippoSDK\Requests\ServiceGroups\ListServiceGroups;
 use ChrisReedIO\ShippoSDK\Requests\ServiceGroups\UpdateServiceGroup;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class ServiceGroups extends Resource
 {

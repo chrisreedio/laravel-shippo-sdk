@@ -4,7 +4,7 @@ namespace ChrisReedIO\ShippoSDK\Resource;
 
 use ChrisReedIO\ShippoSDK\Requests\Pickups\CreatePickup;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class Pickups extends Resource
 {

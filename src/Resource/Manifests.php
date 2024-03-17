@@ -6,7 +6,7 @@ use ChrisReedIO\ShippoSDK\Requests\Manifests\CreateManifest;
 use ChrisReedIO\ShippoSDK\Requests\Manifests\GetManifest;
 use ChrisReedIO\ShippoSDK\Requests\Manifests\ListManifests;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class Manifests extends Resource
 {

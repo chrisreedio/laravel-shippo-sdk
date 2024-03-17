@@ -6,7 +6,7 @@ use ChrisReedIO\ShippoSDK\Requests\Transactions\CreateTransaction;
 use ChrisReedIO\ShippoSDK\Requests\Transactions\GetTransaction;
 use ChrisReedIO\ShippoSDK\Requests\Transactions\ListTransactions;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class Transactions extends Resource
 {

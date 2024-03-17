@@ -6,7 +6,7 @@ use ChrisReedIO\ShippoSDK\Requests\Parcels\CreateParcel;
 use ChrisReedIO\ShippoSDK\Requests\Parcels\GetParcel;
 use ChrisReedIO\ShippoSDK\Requests\Parcels\ListParcels;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class Parcels extends Resource
 {

@@ -6,7 +6,7 @@ use ChrisReedIO\ShippoSDK\Requests\Refunds\CreateRefund;
 use ChrisReedIO\ShippoSDK\Requests\Refunds\GetRefund;
 use ChrisReedIO\ShippoSDK\Requests\Refunds\ListRefund;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class Refunds extends Resource
 {

@@ -7,7 +7,7 @@ use ChrisReedIO\ShippoSDK\Requests\RatesAtCheckout\DeleteDefaultParcelTemplate;
 use ChrisReedIO\ShippoSDK\Requests\RatesAtCheckout\GetDefaultParcelTemplate;
 use ChrisReedIO\ShippoSDK\Requests\RatesAtCheckout\UpdateDefaultParcelTemplate;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class RatesAtCheckout extends Resource
 {

@@ -9,7 +9,7 @@ use ChrisReedIO\ShippoSDK\Requests\CarrierAccounts\ListCarrierAccounts;
 use ChrisReedIO\ShippoSDK\Requests\CarrierAccounts\RegisterCarrierAccount;
 use ChrisReedIO\ShippoSDK\Requests\CarrierAccounts\UpdateCarrierAccount;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class CarrierAccounts extends Resource
 {

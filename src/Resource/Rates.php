@@ -6,7 +6,7 @@ use ChrisReedIO\ShippoSDK\Requests\Rates\GetRate;
 use ChrisReedIO\ShippoSDK\Requests\Rates\ListShipmentRates;
 use ChrisReedIO\ShippoSDK\Requests\Rates\ListShipmentRatesByCurrencyCode;
 use ChrisReedIO\ShippoSDK\Resource;
-use Saloon\Contracts\Response;
+use Saloon\Http\Response;
 
 class Rates extends Resource
 {
