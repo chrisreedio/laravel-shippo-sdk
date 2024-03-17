@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace ChrisReedIO\ShippoSDK\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ShippoSDKCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-shippo-sdk';
 
     public $description = 'My command';
 
