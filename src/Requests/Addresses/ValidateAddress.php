@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\Addresses;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -13,20 +12,18 @@ use Saloon\Http\Request;
  */
 class ValidateAddress extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/addresses/{$this->addressId}/validate";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/addresses/{$this->addressId}/validate";
-	}
-
-
-	/**
-	 * @param string $addressId Object ID of the address
-	 */
-	public function __construct(
-		protected string $addressId,
-	) {
-	}
+    /**
+     * @param  string  $addressId  Object ID of the address
+     */
+    public function __construct(
+        protected string $addressId,
+    ) {
+    }
 }

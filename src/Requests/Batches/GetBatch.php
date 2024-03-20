@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\Batches;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -17,20 +16,18 @@ use Saloon\Http\Request;
  */
 class GetBatch extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/batches/{$this->batchId}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/batches/{$this->batchId}";
-	}
-
-
-	/**
-	 * @param string $batchId Object ID of the batch
-	 */
-	public function __construct(
-		protected string $batchId,
-	) {
-	}
+    /**
+     * @param  string  $batchId  Object ID of the batch
+     */
+    public function __construct(
+        protected string $batchId,
+    ) {
+    }
 }

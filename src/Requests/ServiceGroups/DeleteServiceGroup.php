@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\ServiceGroups;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -13,20 +12,18 @@ use Saloon\Http\Request;
  */
 class DeleteServiceGroup extends Request
 {
-	protected Method $method = Method::DELETE;
+    protected Method $method = Method::DELETE;
 
+    public function resolveEndpoint(): string
+    {
+        return "/service-groups/{$this->serviceGroupId}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/service-groups/{$this->serviceGroupId}";
-	}
-
-
-	/**
-	 * @param string $serviceGroupId Object ID of the service group
-	 */
-	public function __construct(
-		protected string $serviceGroupId,
-	) {
-	}
+    /**
+     * @param  string  $serviceGroupId  Object ID of the service group
+     */
+    public function __construct(
+        protected string $serviceGroupId,
+    ) {
+    }
 }

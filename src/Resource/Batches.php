@@ -12,44 +12,40 @@ use Saloon\Http\Response;
 
 class Batches extends Resource
 {
-	public function createBatch(): Response
-	{
-		return $this->connector->send(new CreateBatch());
-	}
+    public function createBatch(): Response
+    {
+        return $this->connector->send(new CreateBatch());
+    }
 
+    /**
+     * @param  string  $batchId  Object ID of the batch
+     */
+    public function getBatch(string $batchId): Response
+    {
+        return $this->connector->send(new GetBatch($batchId));
+    }
 
-	/**
-	 * @param string $batchId Object ID of the batch
-	 */
-	public function getBatch(string $batchId): Response
-	{
-		return $this->connector->send(new GetBatch($batchId));
-	}
+    /**
+     * @param  string  $batchId  Object ID of the batch
+     */
+    public function addShipmentsToBatch(string $batchId): Response
+    {
+        return $this->connector->send(new AddShipmentsToBatch($batchId));
+    }
 
+    /**
+     * @param  string  $batchId  Object ID of the batch
+     */
+    public function purchaseBatch(string $batchId): Response
+    {
+        return $this->connector->send(new PurchaseBatch($batchId));
+    }
 
-	/**
-	 * @param string $batchId Object ID of the batch
-	 */
-	public function addShipmentsToBatch(string $batchId): Response
-	{
-		return $this->connector->send(new AddShipmentsToBatch($batchId));
-	}
-
-
-	/**
-	 * @param string $batchId Object ID of the batch
-	 */
-	public function purchaseBatch(string $batchId): Response
-	{
-		return $this->connector->send(new PurchaseBatch($batchId));
-	}
-
-
-	/**
-	 * @param string $batchId Object ID of the batch
-	 */
-	public function removeShipmentsFromBatch(string $batchId): Response
-	{
-		return $this->connector->send(new RemoveShipmentsFromBatch($batchId));
-	}
+    /**
+     * @param  string  $batchId  Object ID of the batch
+     */
+    public function removeShipmentsFromBatch(string $batchId): Response
+    {
+        return $this->connector->send(new RemoveShipmentsFromBatch($batchId));
+    }
 }

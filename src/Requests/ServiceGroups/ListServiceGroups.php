@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\ServiceGroups;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -13,16 +12,14 @@ use Saloon\Http\Request;
  */
 class ListServiceGroups extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/service-groups';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/service-groups";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

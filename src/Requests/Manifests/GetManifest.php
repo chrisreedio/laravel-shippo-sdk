@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\Manifests;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -13,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetManifest extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/manifests/{$this->manifestId}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/manifests/{$this->manifestId}";
-	}
-
-
-	/**
-	 * @param string $manifestId Object ID of the manifest to update
-	 */
-	public function __construct(
-		protected string $manifestId,
-	) {
-	}
+    /**
+     * @param  string  $manifestId  Object ID of the manifest to update
+     */
+    public function __construct(
+        protected string $manifestId,
+    ) {
+    }
 }

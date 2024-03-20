@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\RatesAtCheckout;
 
-use DateTime;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -20,18 +19,16 @@ use Saloon\Traits\Body\HasJsonBody;
  */
 class CreateLiveRate extends Request implements HasBody
 {
-	use HasJsonBody;
+    use HasJsonBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return '/live-rates';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/live-rates";
-	}
-
-
-	public function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 }

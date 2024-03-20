@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\CarrierParcelTemplates;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -18,28 +17,25 @@ use Saloon\Http\Request;
  */
 class ListCarrierParcelTemplates extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/parcel-templates';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/parcel-templates";
-	}
+    /**
+     * @param  null|string  $include  filter by user or enabled
+     * @param  null|string  $carrier  filter by specific carrier
+     */
+    public function __construct(
+        protected ?string $include = null,
+        protected ?string $carrier = null,
+    ) {
+    }
 
-
-	/**
-	 * @param null|string $include filter by user or enabled
-	 * @param null|string $carrier filter by specific carrier
-	 */
-	public function __construct(
-		protected ?string $include = null,
-		protected ?string $carrier = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['include' => $this->include, 'carrier' => $this->carrier]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['include' => $this->include, 'carrier' => $this->carrier]);
+    }
 }

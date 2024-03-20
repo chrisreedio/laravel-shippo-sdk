@@ -2,9 +2,9 @@
 
 namespace ChrisReedIO\ShippoSDK;
 
+use ChrisReedIO\ShippoSDK\Commands\ShippoSDKCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use ChrisReedIO\ShippoSDK\Commands\ShippoSDKCommand;
 
 class ShippoSDKServiceProvider extends PackageServiceProvider
 {

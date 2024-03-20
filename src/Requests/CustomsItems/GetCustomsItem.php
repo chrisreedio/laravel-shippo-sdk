@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\CustomsItems;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -13,28 +12,25 @@ use Saloon\Http\Request;
  */
 class GetCustomsItem extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/customs/items/{$this->customsItemId}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/customs/items/{$this->customsItemId}";
-	}
+    /**
+     * @param  string  $customsItemId  Object ID of the customs item
+     * @param  null|int  $page  The page number you want to select
+     */
+    public function __construct(
+        protected string $customsItemId,
+        protected ?int $page = null,
+    ) {
+    }
 
-
-	/**
-	 * @param string $customsItemId Object ID of the customs item
-	 * @param null|int $page The page number you want to select
-	 */
-	public function __construct(
-		protected string $customsItemId,
-		protected ?int $page = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['page' => $this->page]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['page' => $this->page]);
+    }
 }

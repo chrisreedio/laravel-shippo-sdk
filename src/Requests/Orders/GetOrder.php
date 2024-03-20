@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\Orders;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -13,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetOrder extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/orders/{$this->orderId}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/orders/{$this->orderId}";
-	}
-
-
-	/**
-	 * @param string $orderId Object ID of the order
-	 */
-	public function __construct(
-		protected string $orderId,
-	) {
-	}
+    /**
+     * @param  string  $orderId  Object ID of the order
+     */
+    public function __construct(
+        protected string $orderId,
+    ) {
+    }
 }

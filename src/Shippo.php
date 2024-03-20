@@ -31,128 +31,108 @@ use Saloon\Http\Connector;
  */
 class Shippo extends Connector
 {
-	public function resolveBaseUrl(): string
-	{
-		return 'https://api.goshippo.com';
-	}
+    public function resolveBaseUrl(): string
+    {
+        return 'https://api.goshippo.com';
+    }
 
+    public function addresses(): Addresses
+    {
+        return new Addresses($this);
+    }
 
-	public function addresses(): Addresses
-	{
-		return new Addresses($this);
-	}
+    public function batches(): Batches
+    {
+        return new Batches($this);
+    }
 
+    public function carrierAccounts(): CarrierAccounts
+    {
+        return new CarrierAccounts($this);
+    }
 
-	public function batches(): Batches
-	{
-		return new Batches($this);
-	}
+    public function carrierParcelTemplates(): CarrierParcelTemplates
+    {
+        return new CarrierParcelTemplates($this);
+    }
 
+    public function customsDeclarations(): CustomsDeclarations
+    {
+        return new CustomsDeclarations($this);
+    }
 
-	public function carrierAccounts(): CarrierAccounts
-	{
-		return new CarrierAccounts($this);
-	}
+    public function customsItems(): CustomsItems
+    {
+        return new CustomsItems($this);
+    }
 
+    public function invoices(): Invoices
+    {
+        return new Invoices($this);
+    }
 
-	public function carrierParcelTemplates(): CarrierParcelTemplates
-	{
-		return new CarrierParcelTemplates($this);
-	}
+    public function manifests(): Manifests
+    {
+        return new Manifests($this);
+    }
 
+    public function orders(): Orders
+    {
+        return new Orders($this);
+    }
 
-	public function customsDeclarations(): CustomsDeclarations
-	{
-		return new CustomsDeclarations($this);
-	}
+    public function parcels(): Parcels
+    {
+        return new Parcels($this);
+    }
 
+    public function pickups(): Pickups
+    {
+        return new Pickups($this);
+    }
 
-	public function customsItems(): CustomsItems
-	{
-		return new CustomsItems($this);
-	}
+    public function rates(): Rates
+    {
+        return new Rates($this);
+    }
 
+    public function ratesAtCheckout(): RatesAtCheckout
+    {
+        return new RatesAtCheckout($this);
+    }
 
-	public function invoices(): Invoices
-	{
-		return new Invoices($this);
-	}
+    public function refunds(): Refunds
+    {
+        return new Refunds($this);
+    }
 
+    public function serviceGroups(): ServiceGroups
+    {
+        return new ServiceGroups($this);
+    }
 
-	public function manifests(): Manifests
-	{
-		return new Manifests($this);
-	}
+    public function shipments(): Shipments
+    {
+        return new Shipments($this);
+    }
 
+    public function shippoAccounts(): ShippoAccounts
+    {
+        return new ShippoAccounts($this);
+    }
 
-	public function orders(): Orders
-	{
-		return new Orders($this);
-	}
+    public function trackingStatus(): TrackingStatus
+    {
+        return new TrackingStatus($this);
+    }
 
+    public function transactions(): Transactions
+    {
+        return new Transactions($this);
+    }
 
-	public function parcels(): Parcels
-	{
-		return new Parcels($this);
-	}
-
-
-	public function pickups(): Pickups
-	{
-		return new Pickups($this);
-	}
-
-
-	public function rates(): Rates
-	{
-		return new Rates($this);
-	}
-
-
-	public function ratesAtCheckout(): RatesAtCheckout
-	{
-		return new RatesAtCheckout($this);
-	}
-
-
-	public function refunds(): Refunds
-	{
-		return new Refunds($this);
-	}
-
-
-	public function serviceGroups(): ServiceGroups
-	{
-		return new ServiceGroups($this);
-	}
-
-
-	public function shipments(): Shipments
-	{
-		return new Shipments($this);
-	}
-
-
-	public function shippoAccounts(): ShippoAccounts
-	{
-		return new ShippoAccounts($this);
-	}
-
-
-	public function trackingStatus(): TrackingStatus
-	{
-		return new TrackingStatus($this);
-	}
-
-
-	public function transactions(): Transactions
-	{
-		return new Transactions($this);
-	}
-
-
-	public function userParcelTemplates(): UserParcelTemplates
-	{
-		return new UserParcelTemplates($this);
-	}
+    public function userParcelTemplates(): UserParcelTemplates
+    {
+        return new UserParcelTemplates($this);
+    }
 }

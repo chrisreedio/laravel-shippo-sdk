@@ -10,27 +10,25 @@ use Saloon\Http\Response;
 
 class Parcels extends Resource
 {
-	/**
-	 * @param int $page The page number you want to select
-	 * @param int $results The number of results to return per page (max 100)
-	 */
-	public function listParcels(?int $page, ?int $results): Response
-	{
-		return $this->connector->send(new ListParcels($page, $results));
-	}
+    /**
+     * @param  int  $page  The page number you want to select
+     * @param  int  $results  The number of results to return per page (max 100)
+     */
+    public function listParcels(?int $page, ?int $results): Response
+    {
+        return $this->connector->send(new ListParcels($page, $results));
+    }
 
+    public function createParcel(): Response
+    {
+        return $this->connector->send(new CreateParcel());
+    }
 
-	public function createParcel(): Response
-	{
-		return $this->connector->send(new CreateParcel());
-	}
-
-
-	/**
-	 * @param string $parcelId Object ID of the parcel
-	 */
-	public function getParcel(string $parcelId): Response
-	{
-		return $this->connector->send(new GetParcel($parcelId));
-	}
+    /**
+     * @param  string  $parcelId  Object ID of the parcel
+     */
+    public function getParcel(string $parcelId): Response
+    {
+        return $this->connector->send(new GetParcel($parcelId));
+    }
 }

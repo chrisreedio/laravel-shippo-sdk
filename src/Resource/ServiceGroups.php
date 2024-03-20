@@ -11,29 +11,26 @@ use Saloon\Http\Response;
 
 class ServiceGroups extends Resource
 {
-	public function listServiceGroups(): Response
-	{
-		return $this->connector->send(new ListServiceGroups());
-	}
+    public function listServiceGroups(): Response
+    {
+        return $this->connector->send(new ListServiceGroups());
+    }
 
+    public function updateServiceGroup(): Response
+    {
+        return $this->connector->send(new UpdateServiceGroup());
+    }
 
-	public function updateServiceGroup(): Response
-	{
-		return $this->connector->send(new UpdateServiceGroup());
-	}
+    public function createServiceGroup(): Response
+    {
+        return $this->connector->send(new CreateServiceGroup());
+    }
 
-
-	public function createServiceGroup(): Response
-	{
-		return $this->connector->send(new CreateServiceGroup());
-	}
-
-
-	/**
-	 * @param string $serviceGroupId Object ID of the service group
-	 */
-	public function deleteServiceGroup(string $serviceGroupId): Response
-	{
-		return $this->connector->send(new DeleteServiceGroup($serviceGroupId));
-	}
+    /**
+     * @param  string  $serviceGroupId  Object ID of the service group
+     */
+    public function deleteServiceGroup(string $serviceGroupId): Response
+    {
+        return $this->connector->send(new DeleteServiceGroup($serviceGroupId));
+    }
 }

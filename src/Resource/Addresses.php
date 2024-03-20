@@ -11,36 +11,33 @@ use Saloon\Http\Response;
 
 class Addresses extends Resource
 {
-	/**
-	 * @param int $page The page number you want to select
-	 * @param int $results The number of results to return per page (max 100)
-	 */
-	public function listAddresses(?int $page, ?int $results): Response
-	{
-		return $this->connector->send(new ListAddresses($page, $results));
-	}
+    /**
+     * @param  int  $page  The page number you want to select
+     * @param  int  $results  The number of results to return per page (max 100)
+     */
+    public function listAddresses(?int $page, ?int $results): Response
+    {
+        return $this->connector->send(new ListAddresses($page, $results));
+    }
 
+    public function createAddress(): Response
+    {
+        return $this->connector->send(new CreateAddress());
+    }
 
-	public function createAddress(): Response
-	{
-		return $this->connector->send(new CreateAddress());
-	}
+    /**
+     * @param  string  $addressId  Object ID of the address
+     */
+    public function getAddress(string $addressId): Response
+    {
+        return $this->connector->send(new GetAddress($addressId));
+    }
 
-
-	/**
-	 * @param string $addressId Object ID of the address
-	 */
-	public function getAddress(string $addressId): Response
-	{
-		return $this->connector->send(new GetAddress($addressId));
-	}
-
-
-	/**
-	 * @param string $addressId Object ID of the address
-	 */
-	public function validateAddress(string $addressId): Response
-	{
-		return $this->connector->send(new ValidateAddress($addressId));
-	}
+    /**
+     * @param  string  $addressId  Object ID of the address
+     */
+    public function validateAddress(string $addressId): Response
+    {
+        return $this->connector->send(new ValidateAddress($addressId));
+    }
 }

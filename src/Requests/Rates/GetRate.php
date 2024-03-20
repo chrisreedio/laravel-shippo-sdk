@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\Rates;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -13,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetRate extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/rates/{$this->rateId}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/rates/{$this->rateId}";
-	}
-
-
-	/**
-	 * @param string $rateId Object ID of the rate
-	 */
-	public function __construct(
-		protected string $rateId,
-	) {
-	}
+    /**
+     * @param  string  $rateId  Object ID of the rate
+     */
+    public function __construct(
+        protected string $rateId,
+    ) {
+    }
 }

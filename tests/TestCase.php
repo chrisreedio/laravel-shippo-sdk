@@ -2,9 +2,9 @@
 
 namespace ChrisReedIO\ShippoSDK\Tests;
 
+use ChrisReedIO\ShippoSDK\ShippoSDKServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use ChrisReedIO\ShippoSDK\ShippoSDKServiceProvider;
 
 class TestCase extends Orchestra
 {

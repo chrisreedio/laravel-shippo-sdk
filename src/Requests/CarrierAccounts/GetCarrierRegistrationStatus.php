@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\CarrierAccounts;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -13,26 +12,23 @@ use Saloon\Http\Request;
  */
 class GetCarrierRegistrationStatus extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/carrier_accounts/reg-status';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/carrier_accounts/reg-status";
-	}
+    /**
+     * @param  string  $carrier  filter by specific carrier
+     */
+    public function __construct(
+        protected string $carrier,
+    ) {
+    }
 
-
-	/**
-	 * @param string $carrier filter by specific carrier
-	 */
-	public function __construct(
-		protected string $carrier,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['carrier' => $this->carrier]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['carrier' => $this->carrier]);
+    }
 }

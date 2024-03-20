@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\Transactions;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -13,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetTransaction extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/transactions/{$this->transactionId}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/transactions/{$this->transactionId}";
-	}
-
-
-	/**
-	 * @param string $transactionId Object ID of the transaction to update
-	 */
-	public function __construct(
-		protected string $transactionId,
-	) {
-	}
+    /**
+     * @param  string  $transactionId  Object ID of the transaction to update
+     */
+    public function __construct(
+        protected string $transactionId,
+    ) {
+    }
 }

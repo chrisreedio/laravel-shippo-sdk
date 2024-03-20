@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\Refunds;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -13,20 +12,18 @@ use Saloon\Http\Request;
  */
 class GetRefund extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/refunds/{$this->refundId}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/refunds/{$this->refundId}";
-	}
-
-
-	/**
-	 * @param string $refundId Object ID of the refund to update
-	 */
-	public function __construct(
-		protected string $refundId,
-	) {
-	}
+    /**
+     * @param  string  $refundId  Object ID of the refund to update
+     */
+    public function __construct(
+        protected string $refundId,
+    ) {
+    }
 }

@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\CarrierAccounts;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -22,40 +21,37 @@ use Saloon\Http\Request;
  */
 class ListCarrierAccounts extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return '/carrier_accounts';
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/carrier_accounts";
-	}
+    /**
+     * @param  null|bool  $serviceLevels  Appends the property `service_levels` to each returned carrier account
+     * @param  null|string  $carrier  Filter the response by the specified carrier
+     * @param  null|string  $accountId  Filter the response by the specified carrier account Id
+     * @param  null|int  $page  The page number you want to select
+     * @param  null|int  $results  The number of results to return per page (max 100)
+     */
+    public function __construct(
+        protected ?bool $serviceLevels = null,
+        protected ?string $carrier = null,
+        protected ?string $accountId = null,
+        protected ?int $page = null,
+        protected ?int $results = null,
+    ) {
+    }
 
-
-	/**
-	 * @param null|bool $serviceLevels Appends the property `service_levels` to each returned carrier account
-	 * @param null|string $carrier Filter the response by the specified carrier
-	 * @param null|string $accountId Filter the response by the specified carrier account Id
-	 * @param null|int $page The page number you want to select
-	 * @param null|int $results The number of results to return per page (max 100)
-	 */
-	public function __construct(
-		protected ?bool $serviceLevels = null,
-		protected ?string $carrier = null,
-		protected ?string $accountId = null,
-		protected ?int $page = null,
-		protected ?int $results = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter([
-			'service_levels' => $this->serviceLevels,
-			'carrier' => $this->carrier,
-			'account_id' => $this->accountId,
-			'page' => $this->page,
-			'results' => $this->results,
-		]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter([
+            'service_levels' => $this->serviceLevels,
+            'carrier' => $this->carrier,
+            'account_id' => $this->accountId,
+            'page' => $this->page,
+            'results' => $this->results,
+        ]);
+    }
 }

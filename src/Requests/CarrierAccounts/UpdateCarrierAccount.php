@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\CarrierAccounts;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -14,20 +13,18 @@ use Saloon\Http\Request;
  */
 class UpdateCarrierAccount extends Request
 {
-	protected Method $method = Method::PUT;
+    protected Method $method = Method::PUT;
 
+    public function resolveEndpoint(): string
+    {
+        return "/carrier_accounts/{$this->carrierAccountId}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/carrier_accounts/{$this->carrierAccountId}";
-	}
-
-
-	/**
-	 * @param string $carrierAccountId Object ID of the carrier account
-	 */
-	public function __construct(
-		protected string $carrierAccountId,
-	) {
-	}
+    /**
+     * @param  string  $carrierAccountId  Object ID of the carrier account
+     */
+    public function __construct(
+        protected string $carrierAccountId,
+    ) {
+    }
 }

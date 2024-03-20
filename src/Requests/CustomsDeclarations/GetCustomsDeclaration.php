@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\CustomsDeclarations;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -13,28 +12,25 @@ use Saloon\Http\Request;
  */
 class GetCustomsDeclaration extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/customs/declarations/{$this->customsDeclarationId}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/customs/declarations/{$this->customsDeclarationId}";
-	}
+    /**
+     * @param  string  $customsDeclarationId  Object ID of the customs declaration
+     * @param  null|int  $page  The page number you want to select
+     */
+    public function __construct(
+        protected string $customsDeclarationId,
+        protected ?int $page = null,
+    ) {
+    }
 
-
-	/**
-	 * @param string $customsDeclarationId Object ID of the customs declaration
-	 * @param null|int $page The page number you want to select
-	 */
-	public function __construct(
-		protected string $customsDeclarationId,
-		protected ?int $page = null,
-	) {
-	}
-
-
-	public function defaultQuery(): array
-	{
-		return array_filter(['page' => $this->page]);
-	}
+    public function defaultQuery(): array
+    {
+        return array_filter(['page' => $this->page]);
+    }
 }

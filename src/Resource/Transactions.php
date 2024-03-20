@@ -10,27 +10,25 @@ use Saloon\Http\Response;
 
 class Transactions extends Resource
 {
-	/**
-	 * @param int $page The page number you want to select
-	 * @param int $results The number of results to return per page (max 100)
-	 */
-	public function listTransactions(?int $page, ?int $results): Response
-	{
-		return $this->connector->send(new ListTransactions($page, $results));
-	}
+    /**
+     * @param  int  $page  The page number you want to select
+     * @param  int  $results  The number of results to return per page (max 100)
+     */
+    public function listTransactions(?int $page, ?int $results): Response
+    {
+        return $this->connector->send(new ListTransactions($page, $results));
+    }
 
+    public function createTransaction(): Response
+    {
+        return $this->connector->send(new CreateTransaction());
+    }
 
-	public function createTransaction(): Response
-	{
-		return $this->connector->send(new CreateTransaction());
-	}
-
-
-	/**
-	 * @param string $transactionId Object ID of the transaction to update
-	 */
-	public function getTransaction(string $transactionId): Response
-	{
-		return $this->connector->send(new GetTransaction($transactionId));
-	}
+    /**
+     * @param  string  $transactionId  Object ID of the transaction to update
+     */
+    public function getTransaction(string $transactionId): Response
+    {
+        return $this->connector->send(new GetTransaction($transactionId));
+    }
 }

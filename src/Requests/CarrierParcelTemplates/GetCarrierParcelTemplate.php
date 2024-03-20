@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\CarrierParcelTemplates;
 
-use DateTime;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
@@ -14,20 +13,18 @@ use Saloon\Http\Request;
  */
 class GetCarrierParcelTemplate extends Request
 {
-	protected Method $method = Method::GET;
+    protected Method $method = Method::GET;
 
+    public function resolveEndpoint(): string
+    {
+        return "/parcel-templates/{$this->carrierParcelTemplateToken}";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/parcel-templates/{$this->carrierParcelTemplateToken}";
-	}
-
-
-	/**
-	 * @param string $carrierParcelTemplateToken The unique string representation of the carrier parcel template
-	 */
-	public function __construct(
-		protected string $carrierParcelTemplateToken,
-	) {
-	}
+    /**
+     * @param  string  $carrierParcelTemplateToken  The unique string representation of the carrier parcel template
+     */
+    public function __construct(
+        protected string $carrierParcelTemplateToken,
+    ) {
+    }
 }

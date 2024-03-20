@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\ShippoSDK\Requests\Batches;
 
-use DateTime;
 use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -15,22 +14,20 @@ use Saloon\Traits\Body\HasJsonBody;
  */
 class RemoveShipmentsFromBatch extends Request implements HasBody
 {
-	use HasJsonBody;
+    use HasJsonBody;
 
-	protected Method $method = Method::POST;
+    protected Method $method = Method::POST;
 
+    public function resolveEndpoint(): string
+    {
+        return "/batches/{$this->batchId}/remove_shipments";
+    }
 
-	public function resolveEndpoint(): string
-	{
-		return "/batches/{$this->batchId}/remove_shipments";
-	}
-
-
-	/**
-	 * @param string $batchId Object ID of the batch
-	 */
-	public function __construct(
-		protected string $batchId,
-	) {
-	}
+    /**
+     * @param  string  $batchId  Object ID of the batch
+     */
+    public function __construct(
+        protected string $batchId,
+    ) {
+    }
 }
